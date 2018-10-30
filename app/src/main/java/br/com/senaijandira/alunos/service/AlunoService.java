@@ -3,8 +3,11 @@ package br.com.senaijandira.alunos.service;
 import java.util.List;
 
 import br.com.senaijandira.alunos.model.Aluno;
+import br.com.senaijandira.alunos.model.ApiResult;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface AlunoService {
 
@@ -12,5 +15,13 @@ public interface AlunoService {
 
     @GET("/alunos")
     Call<List<Aluno>> obterAlunos();
+
+    //@GET("alunos/{id)")
+    //Call<ALuno> obterAlunoPorId(@Path("id") int id);
+
+    @POST("/aluno/novo")
+    //void cadastrarAluno(Aluno aluno);
+    Call<ApiResult> cadastrarAluno(@Body Aluno aluno);
+
 
 }
