@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface AlunoService {
 
@@ -22,6 +23,9 @@ public interface AlunoService {
     @POST("/aluno/novo")
     //void cadastrarAluno(Aluno aluno);
     Call<ApiResult> cadastrarAluno(@Body Aluno aluno);
+
+    @GET("aluno/{id}")
+    Call<Aluno> alunoPorId(@Path("id")int id);
 
 
 }
